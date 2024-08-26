@@ -36,7 +36,7 @@ class ModelTrainer:
             'Lasso':Lasso(),
             'Ridge':Ridge(),
             'Elasticnet':ElasticNet()
-        }
+            }
             
             model_report:dict=evaluate_model(X_train,y_train,X_test,y_test,models)
             print(model_report)
