@@ -1,8 +1,8 @@
 name: Build and push image to ECR
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs: 
   build-and-push-ecr-image:
@@ -30,6 +30,8 @@ jobs:
         ECR_REPOSITORY: github-sample
         IMAGE_TAG: latest
       run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         
 
 
